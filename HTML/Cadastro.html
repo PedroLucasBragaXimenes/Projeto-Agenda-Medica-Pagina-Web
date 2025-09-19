@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cadastro</title>
+  <!--Logo da Aba-->
+  <link rel="shortcut icon" href="../Imagens/Hosptal-removebg-preview.png">
+  <!--Links para CSS-->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../CSS/Cadastro.css"/>
+  <!--Link para JS-->
+  <script defer src="../JS/Cadastro.js"></script>
+</head>
+<body>
+  <!--Início do Código HTML-->
+
+  <!--Retângulo-->
+  <main class="page">
+    <section class="retangulo" role="form" aria-labelledby="titulo-cadastro">
+
+     <!--Imagem da Logo-->
+     <img src="../Imagens/Pedro_LX-removebg-preview.png">
+
+      <!--Início do Header-->
+      <header>
+        <div>
+          <h1>Cadastro</h1>
+        </div>
+      </header>
+      <!--Fim do Header-->
+    
+      <!--Parte de Inserir o Nome-->
+      <form class="form" onsubmit="salvar(event)">
+        <div class="field">
+          <label for="nome">Nome completo</label>
+          <input
+            pattern="^[A-Za-zÀ-ÿ ]+$"
+            minlength="6"
+            id="nome"
+            name="nome"
+            type="text"
+            autocomplete="name"
+            placeholder="Digite seu Nome"
+            required
+          />
+        </div>
+
+        <!--Parte de Inserir o Email-->
+        <div class="field">
+          <label for="email">Email</label>
+          <input
+          placeholder="Digite seu Email"
+            pattern="^[^@]+@[A-Za-z]+(\.[A-Za-z]+)+$"  
+            id="email"
+            name="email"
+            type="email"
+            inputmode="email"
+            autocomplete="email"
+            required 
+            minlength="15"
+            maxlength="64"
+          /> 
+        </div>
+
+        <!--Parte de Inserir a Senha-->
+        <div class="field">
+          <label for="senha">Senha</label>
+          <input
+            placeholder="Digite sua Senha"
+            id="senha"
+            name="password"
+            type="password"
+            autocomplete="new-password"
+            required autocomplete="off"
+            minlength="6"
+            maxlength="20"
+          />
+        </div>
+        <img class="olho" id="imgdoolho" onclick="olho()" src="../Imagens/olho-removebg-preview.png">
+
+        <!--Escolha entre Paciente e Médico-->
+    <label>Tipo de usuário:</label>
+<div style="display: flex; gap: 20px; margin-top: 5px;">
+  <label>
+    <input type="radio" name="tipo" value="paciente" checked onclick="mostrarEspecialidade(false)"> Paciente
+  </label>
+  <label>
+    <input type="radio" name="tipo" value="medico" onclick="mostrarEspecialidade(true)"> Médico
+  </label>
+</div>
+
+          <!-- Caixa escondida para especialidade -->
+  <div id="boxEspecialidade" style="display:none; margin-top: 10px;">
+    <label>Especialidade:</label>
+    <select id="especialidade">
+      <option value="" disabled selected>Selecione</option>
+      <option value="Cardiologia">Cardiologia</option>
+      <option value="Ortopedia">Ortopedia</option> 
+      <option value="Neurologia">Neurologia</option>
+      <option value="Pediatria">Pediatria</option>
+    </select>
+  </div>
+
+        <!--Botão para Criar a Conta-->
+        <button id="btn" class="btn" type="submit" aria-label="Criar conta">
+          Criar conta
+        </button>
+      </form>
+
+        <!--Parte de Voltar ao Site do Login-->
+      <p class="signup">
+        Já possui conta?
+        <a href="Login.html" class="link">Entrar</a>
+      </p>
+    </section>
+     
+        <!--Rodapé-->
+    <footer>
+      <p>© <span id="year"></span> Agenda Médica</p>
+    </footer>
+  </main>  
+
+  <!--Fim do Código HTML-->
+</body>
+</html>

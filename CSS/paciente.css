@@ -1,0 +1,125 @@
+/* Encurtadores de Cor */
+:root{
+  --bg: #0b1020;
+  --card: 255 255 255 / 6%;
+  --card-border: 255 255 255 / 12%;
+  --text: #e8ebf1;
+  --muted: #a8b0c3;
+  --accent: #7c5cff;
+  --accent-2: #22d3ee;
+  --radius: 12px;
+  --shadow: 0 10px 30px rgba(0,0,0,.35);
+}
+
+/* Body */
+body {
+  font-family: Arial, sans-serif;
+  max-width: 700px;
+  margin: 0 auto;
+background-color: #0a0d18;
+  color: var(--text);
+}
+
+/* Textos */
+h2, h3 {
+  text-align: center;
+}
+
+/* LogOut */
+.logout{
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  border-radius: var(--radius);
+  position: relative;
+  bottom: 89px;
+  right: 290px;
+  cursor: pointer;
+  color: #0a0d18;
+  border: none;
+  font-weight: 700;
+  font-size: 16px;
+}
+.logout:hover{
+  color: antiquewhite;
+  transition: 0.9s;
+}
+
+/* Inputs, Selects e Buttons */
+input, select, button {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: var(--radius);
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(8,12,28,.6);
+  color: var(--text);
+  outline: none;
+  cursor: pointer;
+}
+
+/* Cards disponíveis */
+#consultasCards, #cardsHistorico {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+#consultasCards p, #cardsHistorico p {
+  text-align: center;
+  font-weight: 600; 
+  color: var(--muted); 
+  margin-top: 20px;
+}
+
+.card-consulta, .card-historico {
+  background: color-mix(in oklab, white 6%, transparent);
+  padding: 15px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  text-align: left;
+  transition: transform .2s ease;
+}
+
+.card-consulta:hover, .card-historico:hover {
+  transform: scale(1.05);
+}
+
+.card-consulta button {
+  margin-top: 10px;
+  padding: 8px 12px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  color: #0b1020;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.card-consulta button:hover {
+ color: antiquewhite;
+ transition: 0.9s;
+}
+
+.cancelar{
+ background: linear-gradient(135deg, var(--accent), var(--accent-2));
+ color: black;
+ font-weight: 700;
+}
+
+.cancelar:hover{
+  color: antiquewhite;
+  transition: 0.9s;
+}
+
+/* Mudar a Posição do "Consultas Disponíveis */
+.mudardelugar{
+  position: relative;
+  bottom: 30px;
+}
+
+/* Imagem */
+img{
+  height: 20px;
+  position: relative;
+  bottom: 83px;
+  right: 285px;
+}

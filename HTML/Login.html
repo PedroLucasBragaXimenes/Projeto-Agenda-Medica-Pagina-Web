@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login</title>
+  <!---Logo da Aba-->
+  <link rel="shortcut icon" href="../Imagens/Hosptal-removebg-preview.png">
+  <!--Links para CSS-->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../CSS/Login.css"/>
+  <!--Link para JS-->
+  <script defer src="../JS/Login.js"></script>
+</head>
+<body>
+  <!--Início do Código HTML-->
+
+  <!--Retângulo-->
+  <main class="page">
+    <section class="card" role="form" aria-labelledby="titulo-login">
+
+  <!--Início do Header-->
+      <header>
+        <div>
+          <h1>Login</h1>
+            
+        </div>
+
+       <!--Imagem da Logo-->
+        <img src="../Imagens/Pedro_LX-removebg-preview.png">
+
+        </header>
+  <!--Fim do Header-->
+
+  <!--Parte de Inserir o Email-->
+      <form class="form" onsubmit="login(event)">
+        <div class="field">
+          <label for="email">Email</label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            inputmode="email"
+            autocomplete="email"
+            placeholder="Digite seu Email"
+            maxlength="64"
+            required
+          />
+        </div>
+
+        <!--Parte de Inserir a Senha-->
+        <div class="field">
+          <label for="senha">Senha</label>
+          <input
+            id="senha"
+            name="password"
+            type="password"
+            autocomplete="current-password"
+            required
+            minlength="6"
+            maxlength="20"
+            placeholder="Digite sua Senha"
+          />
+        </div>
+       <img class="olho" id="imgdoolho" onclick="olho()" src="../Imagens/olho-removebg-preview.png">
+
+
+        <!--Botão de Entrar na Conta-->
+        <button id="btn" class="btn" type="submit" aria-label="Entrar na conta">
+          Entrar
+        </button>
+      </form>
+
+       <!--Parte de ir para o Site do Cadastro-->
+      <p class="signup">
+        Não possui conta?
+        <a href="Cadastro.html" class="link">Cadastre-se</a>
+      </p>
+    </section>
+
+    <!--Rodapé-->
+    <footer class="footer">
+      <p>© <span id="year"></span> Agenda Médica</p>
+    </footer>
+  </main>
+
+  <!--Fim do Código HTML-->
+</body>
+</html>

@@ -1,0 +1,154 @@
+
+/* Encurtadores de Cor */
+:root{
+  --bg: #0b1020;             /* Fundo escuro */
+  --card: 255 255 255 / 6%;   /* Fundo translúcido dos cards */
+  --card-border: 255 255 255 / 12%; /* Borda leve */
+  --text: #e8ebf1;       /* Texto principal */
+  --muted: #a8b0c3;     /* Texto secundário */
+  --accent: #7c5cff;    /* Roxo-azulado para botões */
+  --accent-2: #22d3ee;  /* Ciano para gradiente */
+  --radius: 18px;
+  --shadow: 0 10px 30px rgba(0,0,0,.35);
+}
+
+*{ box-sizing:
+  border-box;
+ }
+
+/* Body */
+body{
+  margin: 0;
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue",
+               Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(1200px 600px at 10% 10%, rgba(124,92,255,.25), transparent 60%),
+    radial-gradient(900px 500px at 90% 20%, rgba(34,211,238,.20), transparent 60%),
+    linear-gradient(180deg, #0b1020 0%, #0a0d18 100%);
+}
+
+/* Layout */
+.page{
+  min-height: 100%;
+  display: grid;
+  place-items: center;
+  padding: 32px 16px;
+}
+
+/* Card */
+.card{
+  width: 100%;
+  max-width: 420px;
+  background: color-mix(in oklab, white 6%, transparent);
+  backdrop-filter: blur(10px) saturate(120%);
+  -webkit-backdrop-filter: blur(10px) saturate(120%);
+  border: 1px solid rgba(255,255,255,.12);
+  box-shadow: var(--shadow);
+  border-radius: var(--radius);
+  padding: 28px;
+  position: relative;
+}
+
+
+/* Texto "Login" */
+h1{
+  position: relative;
+  top: 90px;
+}
+
+
+/* Imagem */
+img{
+  height: 120px;
+  position: relative;
+  bottom: 90px;
+  left: 117px;
+}
+
+/* Form */
+.form{ display: grid; gap: 14px; margin-top: 8px; }
+.field{ display: grid; gap: 8px; }
+
+
+/* Caixas de Texto */
+input[type="password"],
+input[type="text"],
+input[type="email"] {
+  width: 100%;
+  padding: 14px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(8, 12, 28, .6);
+  color: var(--text);
+  outline: none;
+  transition: border-color .2s, box-shadow .2s, transform .05s;
+}
+
+/* Colocar a cor verde quando tu clica no input */
+input[type="password"]:focus,
+input[type="text"]:focus,
+input[type="email"]:focus {
+  border-color: #4CAF50; 
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+
+/* Olho */
+.olho{
+  height: 24px;
+  position: relative;
+  bottom: 48px;
+  left: 321px;
+}
+
+/* Links (os <a/>) */
+.link{
+  text-decoration: none;
+  font-weight: 600;
+  color: color-mix(in oklab, var(--accent) 75%, white 0%);
+}
+
+.link:hover{
+  color: white;
+  text-decoration: underline;
+}
+
+/* Botão de Enviar */
+.btn{
+  margin-top: 6px;
+  width: 100%;
+  padding: 14px 16px;
+  border: 0;
+  border-radius: 12px;
+  font-weight: 700;
+  letter-spacing: .3px;
+  color: #0b1020;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  cursor: pointer;
+  transition: transform .06s ease, filter .2s ease;
+}
+
+.btn:hover{
+  color: antiquewhite;
+  transition: 0.9s;
+}
+
+/* Se cadastrar */
+.signup{
+  text-align: center;
+  margin: 16px 0 4px;
+  color: var(--muted);
+}
+
+
+/* Rodapé */
+.footer{
+  width: 100%;
+  text-align: center;
+  margin-top: 18px;
+  color: #91a0c4;
+  font-size: .85rem;
+  opacity: .9;
+}
+
+

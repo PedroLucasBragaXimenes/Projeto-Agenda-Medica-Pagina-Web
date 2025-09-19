@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Área do Paciente</title>
+  <!--Logo da Aba-->
+  <link rel="shortcut icon" href="../Imagens/Pedro_LX-removebg-preview.png">
+  <!--Link para CSS-->
+  <link rel="stylesheet" href="../CSS/paciente.css">
+  <!--Link para JS-->
+  <script defer src="../JS/paciente.js"></script>
+  
+    <!-- EmailJS -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+    (function(){
+      emailjs.init("X2_N3QyjWPhHeUDg8"); 
+    })();
+  </script>
+  
+
+</head>
+<body>
+  <!--Início do Código HTML-->
+  <!--Saudações-->
+  <h2>Bem-vindo, <span id="nomeUsuario"></span>!</h2>
+  <p style="text-align: center;">Você está na área do <strong>Paciente</strong>.</p>
+  <button class="logout" onclick="logout()">Sair</button>
+  <img src="../Imagens/logouttt.png">
+
+  <!--Consultas Disponíveis-->
+  <div id="consultasDisponiveis">
+    <h3 class="mudardelugar">Consultas Disponíveis</h3>
+    <div id="consultasCards"></div>
+  </div>
+
+  <!--Histórico de Agendamentos-->
+  <div id="historicoAgendamentos">
+    <h3>Meus Agendamentos</h3>
+    <div id="cardsHistorico"></div>
+  </div>
+  <!--Fim do Código HTML-->
+</body>
+</html>

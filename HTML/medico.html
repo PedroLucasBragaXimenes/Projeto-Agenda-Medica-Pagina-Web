@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Área do Médico</title>
+  <!--Logo da Aba-->
+  <link rel="shortcut icon" href="../Imagens/Pedro_LX-removebg-preview.png">
+  <!--Link para JavaScript-->
+  <script defer src="../JS/medico.js"></script>
+  <!--Link para CSS-->
+  <link rel="stylesheet" href="../CSS/medico.css">
+</head>
+<body>
+<!--Início do Código HTML-->
+
+<!--Início do Site e Textos de Saudações-->
+  <h2>Bem-vindo, <span id="nomeUsuario"></span>!</h2>
+  <p style="text-align: center;">Você está na área do <strong>Médico</strong>
+     <strong id="nomeEspecialidade"></strong></p>
+
+     <!--Botão para dar LogOut-->
+  <button class="logout" onclick="logout()">Sair</button>
+     <!--Imagem do LogOut-->
+  <img src="../Imagens/logouttt.png">
+<!--Início do Form-->
+    <form id="formAgendamento">
+     
+    <h3>Cadastro Médico</h3>
+    <!--Options para Selecionar Horário-->
+      <select id="horario">
+  <option disabled selected value="" >Selecione seu Horário</option>
+  <option>7:00</option>
+  <option>8:00</option>
+  <option>9:00</option>
+  <option>10:00</option>
+  <option>11:00</option>
+  <option>12:00</option>
+  <option>13:00</option>
+  <option>14:00</option>
+  <option>15:00</option>
+  <option>16:00</option>
+  <option>17:00</option>
+  <option>18:00</option>
+  <option>19:00</option>
+</select>
+<!--Fim das Options-->
+
+       <!--Escolher a Data-->
+       <label for="data">Data:</label>
+      <input type="date" id="data" required>
+
+
+      
+    
+       <!--Botão para Validar os Dados-->
+      <button type="button" onclick="agendar()" class="agendar">Enviar</button>
+    </form>
+
+      <!--Fim do Form-->
+
+      <!--Cards de Consultas-->
+      <h3>Consultas Cadastradas</h3>
+ <div id="agendamentosCards"></div>
+
+<!--Fim do Código HTML-->
+</body>
+</html>

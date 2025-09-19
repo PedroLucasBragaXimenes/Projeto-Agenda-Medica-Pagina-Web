@@ -1,0 +1,215 @@
+
+/* Encurtadores de Cor */
+:root{
+  --bg: #0b1020;              /* Fundo escuro */
+  --card: 255 255 255 / 6%;    /* Fundo translúcido dos cards */
+  --card-border: 255 255 255 / 12%; /* Borda leve */
+  --text: #e8ebf1;             /* Texto principal */
+  --muted: #a8b0c3;            /* Texto secundário */
+  --accent: #7c5cff;           /* Roxo-azulado para botões */
+  --accent-2: #22d3ee;         /* Ciano para gradiente */
+  --radius: 12px;
+  --shadow: 0 10px 30px rgba(0,0,0,.35);
+}
+
+/* Body */
+body {
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue",
+               Arial, "Noto Sans", sans-serif;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0;
+  height: 160vh;
+  background-color: #0a0d18;
+  color: var(--text);
+}
+
+/* Títulos */
+h2, h3 {
+  text-align: center;
+  color: var(--text);
+}
+
+/* Formulário */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+  background: color-mix(in oklab, white 6%, transparent);
+  padding: 20px;
+  border-radius: var(--radius);
+  border: 1px solid rgba(255,255,255,.12);
+  box-shadow: var(--shadow);
+}
+
+/* Inputs e selects */
+input, select {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: var(--radius);
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(8,12,28,.6);
+  color: var(--text);
+  outline: none;
+  transition: border-color .2s, box-shadow .2s;
+}
+
+input:focus, select:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px rgba(124,92,255,.18);
+}
+
+/* Botões */
+button, .agendar, .botaocancelar, .logout {
+  padding: 10px 16px;
+  font-size: 16px;
+  border-radius: var(--radius);
+  border: none;
+  color: #0b1020;
+  cursor: pointer;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  transition: transform .06s ease, filter .2s ease, background .3s;
+}
+
+button:hover, .agendar:hover, .botaocancelar:hover, .logout:hover {
+  color: antiquewhite;
+  transition: 0.9s;
+}
+
+
+
+/* Logout */
+.logout {
+  position: relative;
+  bottom: 89px;
+  right: 290px;
+}
+
+.logout:hover{
+      color: antiquewhite;
+      transition: 0.9s;
+    }
+
+/* Imagem */
+img {
+  height: 20px;
+  position: relative;
+  bottom: 83px;
+  right: 285px;
+}
+
+/* Lista de consultas */
+ul {
+  list-style: none;
+  padding: 10px 20px;
+  background: color-mix(in oklab, white 6%, transparent);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  color: var(--text);
+}
+
+/* Container dos cards */
+#agendamentosCards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 20px;
+  
+}
+
+/* Cards Geral */
+.card-agendamento,
+.card-consulta-marcada {
+ background:color-mix(in oklab, white 6%, transparent) ;  /* roxo claro com transparência */
+  padding: 15px;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s, box-shadow 0.2s;
+  color: white;
+}
+
+.card-agendamento:hover,
+.card-consulta-marcada:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+}
+
+.card-agendamento p,
+.card-consulta-marcada p,
+.card-agendamento h4,
+.card-consulta-marcada h4 {
+  margin: 5px 0;
+  color: white; /* cor do texto */
+}
+
+/* Card individual */
+.card-agendamento .cancelar{
+   background-color: #ff4d4f;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 10px;
+  transition: background 0.3s, transform 0.2s;
+  width: 100%;
+  text-align: center;
+}
+
+/* Hover efeito */
+.card-agendamento .cancelar:hover {
+    background-color: #e43d3f;
+  transform: translateY(-2px);
+  color: black;
+  transition: 0.9s;
+}
+
+/* Texto do card */
+.card-agendamento p,
+.card-agendamento h4 {
+  margin: 5px 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Título do paciente destacado */
+.card-agendamento p strong {
+  font-weight: 600;
+}
+
+/* Notificações */
+.notificacao-toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #4CAF50;
+  color: white;
+  padding: 15px 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  z-index: 1000;
+  font-weight: bold;
+  animation: slideIn 5s ease;
+}
+
+/* Animação da Notificação */
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(100%); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+
+/* Colocar o texto de "Nenhum paciente marcou consulta" no meio */
+.esp{
+  text-align: center;
+}
+
+/* Colocar o texto de "Você não cadastrou nenhum horário ainda" no meio */
+.esp2{
+  position: relative;
+  left: 150px;
+}
+
